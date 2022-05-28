@@ -1,0 +1,11 @@
+.news-add {
+  min-height: 500px;
+  background-color: #fff;
+  padding-bottom: 32px;
+}
+
+.form-add {
+  width: 850px;
+  margin: auto;
+  padding-top: 16px;
+}

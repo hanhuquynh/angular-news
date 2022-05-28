@@ -1,0 +1,20 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="detail-news">
+    <div class="div-content">
+      <p class="category">{{ newsList.category }}</p>
+      <p class="title">{{ newsList.title }}</p>
+      <p class="posting-date">
+        {{ newsList.posting_date }}
+      </p>
+      <div class="div-img">
+        <img src="{{ newsList.image }}" alt="" class="img-news" />
+        <p class="image_title">{{ newsList.image_title }}</p>
+      </div>
+      <p class="content">
+        {{ newsList.content }}
+      </p>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

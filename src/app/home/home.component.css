@@ -1,0 +1,57 @@
+.home {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.div-home {
+  width: 850px;
+  margin: auto;
+}
+
+.news-list {
+  padding: 24px;
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.second {
+  margin-left: 24px;
+  line-height: 24px;
+}
+
+.news-img {
+  width: 232px;
+  height: 155px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.posting-date,
+.description {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.description {
+  display: -webkit-box;
+  max-height: 3.2rem;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  line-height: 1.6rem;
+}
+
+.category {
+  min-width: 65px;
+  border-radius: 10px;
+  margin-right: 4px;
+  border: none;
+  outline: none;
+  background-color: greenyellow;
+}

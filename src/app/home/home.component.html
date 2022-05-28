@@ -1,0 +1,54 @@
+<div class="container">
+  <app-header></app-header>
+
+  <div class="home">
+    <div class="div-home">
+      <form
+        style="
+          padding-top: 32px !important;
+          display: flex;
+          justify-content: flex-end;
+        "
+      >
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="Tìm kiếm..."
+          aria-label="Search"
+          name="category"
+          [(ngModel)]="category"
+          (ngModelChange)="Search()"
+        />
+      </form>
+      <div
+        class="news-list"
+        *ngFor="
+          let item of newsList | paginate: { itemsPerPage: 5, currentPage: p }
+        "
+      >
+        <div class="first">
+          <img src="{{ item.image }}" alt="" class="news-img" />
+        </div>
+        <div class="second">
+          <a routerLink="/detail/{{ item.id }}">
+            <p class="title">
+              {{ item.title }}
+            </p>
+          </a>
+          <p class="posting-date">
+            <button class="category">{{ item.category }}</button>
+            {{ item.posting_date }}
+          </p>
+          <p class="description">
+            {{ item.content }}
+          </p>
+        </div>
+      </div>
+      <div class="container" style="text-align: right; padding: 24px">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
