@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   url = 'http://localhost:3000/api/news';
-  category: any;
+  search = '';
   newsList: any = [];
   p: number = 1;
   constructor(private httpClient: HttpClient) {}
@@ -18,17 +18,5 @@ export class HomeComponent implements OnInit {
       this.newsList = res.data;
       // console.log(this.newsList);
     });
-  }
-
-  Search() {
-    if (this.category == '') {
-      this.ngOnInit();
-    } else {
-      this.newsList = this.newsList.filter((res: { category: string }) => {
-        return res.category
-          .toLocaleLowerCase()
-          .match(this.category.toLocaleLowerCase());
-      });
-    }
   }
 }

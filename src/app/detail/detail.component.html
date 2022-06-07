@@ -5,7 +5,7 @@
       <p class="category">{{ newsList.category }}</p>
       <p class="title">{{ newsList.title }}</p>
       <p class="posting-date">
-        {{ newsList.posting_date }}
+        {{ newsList.posting_date | date: "medium" }}
       </p>
       <div class="div-img">
         <img src="{{ newsList.image }}" alt="" class="img-news" />

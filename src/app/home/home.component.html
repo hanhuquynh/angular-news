@@ -3,29 +3,18 @@
 
   <div class="home">
     <div class="div-home">
-      <form
-        style="
+      <form style="
           padding-top: 32px !important;
           display: flex;
           justify-content: flex-end;
-        "
-      >
-        <input
-          class="form-control mr-sm-2"
-          type="text"
-          placeholder="Tìm kiếm..."
-          aria-label="Search"
-          name="category"
-          [(ngModel)]="category"
-          (ngModelChange)="Search()"
-        />
+        ">
+        <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm..." aria-label="Search" name="search" [(ngModel)]="search" />
       </form>
-      <div
-        class="news-list"
-        *ngFor="
-          let item of newsList | paginate: { itemsPerPage: 5, currentPage: p }
-        "
-      >
+      <div class="news-list" *ngFor="
+          let item of newsList
+            | filter: search
+            | paginate: { itemsPerPage: 5, currentPage: p }
+        ">
         <div class="first">
           <img src="{{ item.image }}" alt="" class="news-img" />
         </div>
@@ -37,7 +26,7 @@
           </a>
           <p class="posting-date">
             <button class="category">{{ item.category }}</button>
-            {{ item.posting_date }}
+            {{ item.posting_date | date: "medium" }}
           </p>
           <p class="description">
             {{ item.content }}
